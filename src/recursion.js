@@ -7,20 +7,71 @@
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
+	//if negative number: return error
+	if (n < 0) {
+		return null;
+	}
+	//if n = 0 return 1
+	if (n === 0) {
+		return 1;
+	}
+	//return n * (factorial(n-1))
+	return n * (factorial(n - 1));
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+	// base case: if array.length === 0 return total
+	if (array.length === 0) {
+		return 0;
+	}
+	if (array.length === 1) {
+		return array[0];
+	}
+	return array[0] + (sum(array.slice(1)));
+	// recursive case: arr[0] + (sum(array.slice() -1))
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+	// intialize total to zero
+	// if array is empty return total
+	// loop thru array
+		// if item is a number
+			// add number to total
+		// if item is an array 
+			// total plus (arraySum item)
+	// return total
+	var total = 0;
+	if (array.length === 0){
+		return total;
+	};
+	for(var i = 0; i < array.length; i++) {
+		if (typeof array[i] === 'number') {
+			total += array[i];
+		};
+		if (Array.isArray(array[i])){
+			total += arraySum(array[i]);
+		};
+	};
+	return total;
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+	//add 2 consecutively until it matches abs(n) or surpasses abs(n)
+	//if (n < 0)
+	  //n = abs(n);
+	//if (n < 2)
+	  //return false;
+	//num = 2;
+	//if (n < num)
+	  //if (num = n)
+	    // return true
+	  
+
 };
 
 // 5. Sum all integers below a given integer.
